@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Creative Technologist</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    
+    <!-- p5.js Canvas Container -->
+    <div id="canvas-container"></div>
+    
+    <!-- Side Navigation Dots -->
+    <nav class="nav-dots">
+        <button class="nav-dot active" data-section="hero" aria-label="Hero Section"></button>
+        <button class="nav-dot" data-section="story" aria-label="Story Section"></button>
+        <button class="nav-dot" data-section="work" aria-label="Work Section"></button>
+        <button class="nav-dot" data-section="contact" aria-label="Contact Section"></button>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        
+        <!-- SECTION 1: HERO -->
+        <section id="hero" class="section hero-section" data-scroll-section="0">
+            <div class="container">
+                <div id="hero-shape-canvas"></div>
+                <h1 class="hero-title">Martuza Ferdous</h1>
+                <p class="hero-subtitle">Creative Technologist</p>
+                <p class="hero-hook">Building interactive experiences that bridge logic and imagination</p>
+                <div class="scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 2: STORY - INTERACTIVE JOURNEY -->
+        <section id="story" class="section story-section" data-scroll-section="1">
+            <div class="container">
+                <h2 class="section-title-center">The Journey</h2>
+                
+                <div class="journey-container">
+                    <!-- p5.js canvas for connecting path -->
+                    <div id="journey-path-canvas"></div>
+                    
+                    <!-- Journey Node 1 -->
+                    <div class="journey-node" data-node="0">
+                        <div class="node-content node-left">
+                            <div class="node-text">
+                                <h3 class="node-title">Where I Started</h3>
+                                <p>My career began in the world of structure and systems—product management, consulting, entrepreneurship, and software development. I built applications, designed strategies, and solved complex business problems. Everything had a framework, a process, a clear objective.</p>
+                                <p>I was good at it. But something was missing.</p>
+                            </div>
+                        </div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right"></div>
+                    </div>
+                    
+                    <!-- Journey Node 2 -->
+                    <div class="journey-node" data-node="1">
+                        <div class="node-content node-left"></div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right">
+                            <div class="node-text">
+                                <h3 class="node-title">The Questions</h3>
+                                <p>The questions started small: <em>What if technology could tell stories? What if code could be expressive, not just functional? What if systems could surprise you?</em></p>
+                                <p>I found myself drawn to the edges—where logic met creativity, where data became visual, where interaction became experience. The clean lines of my career path started to blur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Journey Node 3 -->
+                    <div class="journey-node" data-node="2">
+                        <div class="node-content node-left">
+                            <div class="node-text">
+                                <h3 class="node-title">The Transformation</h3>
+                                <p>I dove into digital media and creative coding. p5.js became my canvas. WebXR opened new dimensions. Interactive storytelling merged everything I'd learned about structure with everything I was discovering about expression.</p>
+                                <p>The shift wasn't abandoning my technical foundation—it was building on top of it. Every business insight, every system I'd designed, every problem I'd solved became a tool for creating experiences that mattered.</p>
+                            </div>
+                        </div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right"></div>
+                    </div>
+                    
+                    <!-- Journey Node 4 -->
+                    <div class="journey-node" data-node="3">
+                        <div class="node-content node-left"></div>
+                        <div class="node-marker">
+                            <div class="node-circle"></div>
+                        </div>
+                        <div class="node-content node-right">
+                            <div class="node-text">
+                                <h3 class="node-title">Where I Am Now</h3>
+                                <p>Today, I work at the intersection of technology and creativity. I speak both languages fluently: the language of product development and the language of artistic expression. I design with both logic and imagination.</p>
+                                <p>I'm building interactive experiences, teaching artists to code, and exploring the boundaries of what's possible when you refuse to choose between structure and play.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 3: WORK -->
+        <section id="work" class="section work-section" data-scroll-section="2">
+            <div class="container">
+                <h2 class="section-title">Selected Work</h2>
+                <div class="work-grid">
+                    
+                    <!-- Project cards will go here -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Project Title</h3>
+                            <p class="project-description">Brief description of the project and its impact.</p>
+                            <div class="project-tags">
+                                <span class="tag">Creative Coding</span>
+                                <span class="tag">p5.js</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Project Title</h3>
+                            <p class="project-description">Brief description of the project and its impact.</p>
+                            <div class="project-tags">
+                                <span class="tag">Product</span>
+                                <span class="tag">Systems</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Project Title</h3>
+                            <p class="project-description">Brief description of the project and its impact.</p>
+                            <div class="project-tags">
+                                <span class="tag">Interactive</span>
+                                <span class="tag">WebXR</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Project Title</h3>
+                            <p class="project-description">Brief description of the project and its impact.</p>
+                            <div class="project-tags">
+                                <span class="tag">Education</span>
+                                <span class="tag">Teaching</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Project Title</h3>
+                            <p class="project-description">Brief description of the project and its impact.</p>
+                            <div class="project-tags">
+                                <span class="tag">Storytelling</span>
+                                <span class="tag">Digital Media</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Project Title</h3>
+                            <p class="project-description">Brief description of the project and its impact.</p>
+                            <div class="project-tags">
+                                <span class="tag">Hybrid</span>
+                                <span class="tag">Bridge Work</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 4: CONTACT -->
+        <section id="contact" class="section contact-section" data-scroll-section="3">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <p class="contact-statement">I'm available for creative projects, collaborations, and conversations about the intersection of technology and art.</p>
+                    <div class="contact-links">
+                        <a href="mailto:your.email@example.com" class="contact-link">Email</a>
+                        <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/yourusername" class="contact-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Scripts -->
+    <script src="js/hero-shape.js"></script>
+    <script src="js/journey-path.js"></script>
+    <script src="js/path-sketch.js"></script>
+    <script src="js/scroll-controller.js"></script>
+    <script src="js/ui.js"></script>
+    
+</body>
+</html>
